@@ -29,3 +29,13 @@ wget -O /usr/local/bin/phpunit8 https://phar.phpunit.de/phpunit-8.phar
 wget -O /usr/local/bin/phpunit9 https://phar.phpunit.de/phpunit-9.phar
 chmod +x /usr/local/bin/phpunit*
 
+wget -O /usr/local/bin/enphp5.6 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp5.6.sh
+wget -O /usr/local/bin/enphp7.0 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.0.sh
+wget -O /usr/local/bin/enphp7.1 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.1.sh
+wget -O /usr/local/bin/enphp7.2 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.2.sh
+wget -O /usr/local/bin/enphp7.3 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.3.sh
+wget -O /usr/local/bin/enphp7.4 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.4.sh
+wget -O /usr/local/bin/enphp8.0 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp8.0.sh
+chmod +x /usr/local/bin/enphp*
+
+enphp7.4
