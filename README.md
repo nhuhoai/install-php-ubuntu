@@ -2,6 +2,10 @@
 
 Install multiple PHP version on Ubuntu with Ondřej Surý repository (only for Apache2 server actually)
 
+![MIT License](https://img.shields.io/github/license/nhuhoai/install-php-ubuntu)
+![version 0.1.0](https://img.shields.io/badge/version-0.1.0-green.svg)
+![php 5.6, 7.x, 8.0](https://img.shields.io/badge/php-5.6,%207.x,%208.0-royalblue.svg?logo=php)
+
 ## Install
 
 Just exec this command once for installing your PHP environment.
