@@ -3,8 +3,16 @@
 Install multiple PHP version on Ubuntu with Ondřej Surý repository (only for Apache2 server actually)
 
 ![MIT License](https://img.shields.io/github/license/nhuhoai/install-php-ubuntu)
-![version 0.1.0](https://img.shields.io/badge/version-0.1.0-green.svg)
+![version 0.2.0](https://img.shields.io/badge/version-0.2.0-green.svg)
 ![php 5.6, 7.x, 8.0](https://img.shields.io/badge/php-5.6,%207.x,%208.0-royalblue.svg?logo=php)
+
+## What's new
+
+### Additions
+
+-   Add install/uninstall PHP extension scripts
+
+For complete history, please read the [changelog](CHANGELOG.md).
 
 ## Install
 
@@ -63,6 +71,12 @@ sudo enphp7.4
 
 # Enable PHP 8.0 (no phpunit actually)
 sudo enphp8.0
+
+# Install a PHP extension
+sudo addphpext php-ext-name
+
+# Uninstall a PHP extension
+sudo delphpext php-ext-name
 ```
 
 ## License and 3rd party licenses
