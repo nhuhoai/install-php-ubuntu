@@ -13,13 +13,10 @@ apt update
 apt install -y apache2 mariadb-server sqlite3 wget
 
 # Install PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4 & 8.0
-apt install -y php5.6 php5.6-curl php5.6-json php5.6-mbstring php5.6-mysql php5.6-sqlite3 php5.6-tokenizer php5.6-xdebug php5.6-xml php5.6-zip
-apt install -y php7.0 php7.0-curl php7.0-json php7.0-mbstring php7.0-mysql php7.0-sqlite3 php7.0-tokenizer php7.0-xdebug php7.0-xml php7.0-zip
-apt install -y php7.1 php7.1-curl php7.1-json php7.1-mbstring php7.1-mysql php7.1-sqlite3 php7.1-tokenizer php7.1-xdebug php7.1-xml php7.1-zip
-apt install -y php7.2 php7.2-curl php7.2-json php7.2-mbstring php7.2-mysql php7.2-sqlite3 php7.2-tokenizer php7.2-xdebug php7.2-xml php7.2-zip
-apt install -y php7.3 php7.3-curl php7.3-json php7.3-mbstring php7.3-mysql php7.3-sqlite3 php7.3-tokenizer php7.3-xdebug php7.3-xml php7.3-zip
-apt install -y php7.4 php7.4-curl php7.4-json php7.4-mbstring php7.4-mysql php7.4-sqlite3 php7.4-tokenizer php7.4-xdebug php7.4-xml php7.4-zip
-apt install -y php8.0 php8.0-curl php8.0-mbstring php8.0-mysql php8.0-sqlite3 php8.0-tokenizer php8.0-xdebug php8.0-xml php8.0-zip
+apt-cache search "^php[0-9].[0-9]$" | awk '{print $1;system("apt install -y "$1)}'
+
+# Install PHP extensions: curl, json, mbstring, mysql, sqlite3, tokenizer, xdebug, xml, zip
+apt-cache search "^php[0-9].[0-9]-(curl|json|mbstring|mysql|sqlite3|tokenizer|xdebug|xml|zip)$" | awk '{print $1;system("apt install -y "$1)}'
 
 # Download PHP_CodeSniffer tools
 wget -O /usr/local/bin/phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
@@ -34,7 +31,7 @@ wget -O /usr/local/bin/phpunit8 https://phar.phpunit.de/phpunit-8.phar
 wget -O /usr/local/bin/phpunit9 https://phar.phpunit.de/phpunit-9.phar
 chmod +x /usr/local/bin/phpunit*
 
-# Download enabler scripts
+# Download enabler, extentions manager scripts
 wget -O /usr/local/bin/enphp5.6 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp5.6.sh
 wget -O /usr/local/bin/enphp7.0 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.0.sh
 wget -O /usr/local/bin/enphp7.1 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.1.sh
@@ -42,7 +39,9 @@ wget -O /usr/local/bin/enphp7.2 https://raw.githubusercontent.com/nhuhoai/instal
 wget -O /usr/local/bin/enphp7.3 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.3.sh
 wget -O /usr/local/bin/enphp7.4 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp7.4.sh
 wget -O /usr/local/bin/enphp8.0 https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/enphp8.0.sh
-chmod +x /usr/local/bin/enphp*
+wget -O /usr/local/bin/addphpext https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/addphpext.sh
+wget -O /usr/local/bin/delphpext https://raw.githubusercontent.com/nhuhoai/install-php-ubuntu/main/delphpext.sh
+chmod +x /usr/local/bin/enphp* /usr/local/bin/*phpext
 
 # Enable PHP 7.4
 enphp7.4
